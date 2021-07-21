@@ -32,13 +32,13 @@ public class BeerController {
         return new ResponseEntity(savedDto, HttpStatus.CREATED);
     }
 
-    @PutMapping("{/beerUuid}")
+    @PutMapping("/{beerUuid}")
     public ResponseEntity updateBeer(@PathVariable("beerUuid") UUID beerUuid, @RequestBody BeerDto beerDto) {
         beerService.updateBeer(beerUuid, beerDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @DeleteMapping("/beerUuid}")
+    @DeleteMapping("/{beerUuid}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteBeer(@PathVariable("beerUuid") UUID beerUuid) {
         beerService.deleteBeer(beerUuid);
