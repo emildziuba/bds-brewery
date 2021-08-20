@@ -29,7 +29,7 @@ public class BeerController {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/api/v1/beer/" + savedDto.getId().toString());
 
-        return new ResponseEntity(savedDto, HttpStatus.CREATED);
+        return new ResponseEntity(headers, HttpStatus.CREATED);
     }
 
     @PutMapping("/{beerUuid}")
